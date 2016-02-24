@@ -20,13 +20,13 @@ $Configuration
 		$AdditionalIncludeDirectories	"$BASE;.\ges;.\ges\ai;.\ges\ent;.\ges\py;.\hl2;.\hl2mp,$SRCDIR\game\shared\Multiplayer"
 		$PreprocessorDefinitions	"$BASE;HL2_DLL;BOOST_AUTO_LINK_NOMANGLE;BOOST_PYTHON_STATIC_LIB;BOOST_PYTHON_NO_PY_SIGNATURES;BOOST_SERIALIZATION_NO_LIB;BOOST_PYTHON_MAX_ARITY=20;Py_ENABLE_SHARED"
 	}
-	
+
 	$Linker
 	{
 		$AdditionalLibraryDirectories	"$BASE;..\..\lib\ges\"
 		$SystemLibraries		"dl" [$LINUXALL]
-		$SystemLibraries        "util" [$LINUXALL]
-		$SystemLibraries        "rt" [$LINUXALL]
+		$SystemLibraries    "util" [$LINUXALL]
+		$SystemLibraries    "rt" [$LINUXALL]
 		//$GCC_ExtraLinkerFlags		"$BASE -read_only_relocs suppress" [$OSX32]
 	}
 }
@@ -71,12 +71,12 @@ $Project "Server (GES)"
             $File "ges/grenade_shell.h"
             $File "ges/npc_tknife.cpp"
             $File "ges/npc_tknife.h"
-            
+
             $Folder "Python"
             {
                 $File "ges/py/ge_pyfuncs.h"
                 $File "ges/py/ge_pymanager.h"
-				
+
                 $File "ges/py/ge_pyprecom.h"
                 $File "ges/py/ge_pyprecom.cpp"
                 {
@@ -90,7 +90,7 @@ $Project "Server (GES)"
                         }
                     }
                 }
-                
+
                 $File "ges/py/ge_pyai.cpp"           \
                     "ges/py/ge_pyaiconstants.cpp"    \
                     "ges/py/ge_pyentity.cpp"         \
@@ -115,7 +115,7 @@ $Project "Server (GES)"
                     }
                 }
             }
-            
+
             $Folder "Ai"
             {
                 $File "ges/ai/ge_ai.cpp"
@@ -129,7 +129,7 @@ $Project "Server (GES)"
                 $File "ges/ai/npc_gebase.h"
                 $File "ges/ai/npc_gebase_aiming.cpp"
             }
-            
+
             $Folder "Entities"
             {
                 $File "ges/ent/ent_capturearea.cpp"
@@ -156,7 +156,7 @@ $Project "Server (GES)"
                 $File "ges/ent/ge_spawner.h"
                 $File "ges/ent/ge_weaponspawner.cpp"
             }
-            
+
             $Folder "Shared"
             {
                 $File "$SRCDIR/game/shared/ges/ge_achievement_defs.h"
@@ -457,7 +457,7 @@ $Project "Server (GES)"
 			$File	"$SRCDIR\game\shared\hl2mp\hl2mp_playeranimstate.cpp"
 			$File	"$SRCDIR\game\shared\Multiplayer\multiplayer_animstate.h"
 			$File	"$SRCDIR\game\shared\Multiplayer\multiplayer_animstate.cpp"
-			
+
 			$Folder	"Weapons"
 			{
 				$File	"hl2mp\grenade_satchel.cpp"
@@ -491,22 +491,22 @@ $Project "Server (GES)"
 			}
 		}
 	}
-	
+
 	$Folder	"Link Libraries"
 	{
-	    // Python (Linux Only, MSVC handles this within pyconfig.h)
-		$ImpLib     "$LIBGES/python3" [$POSIX]
-		
+		// Python (Linux Only, MSVC handles this within pyconfig.h)
+		$ImpLib "$LIBGES/python3" [$POSIX]
+
 		// Boost::Python
-		$Lib        "$LIBGES/boost_python"
-		
+		$Lib "$LIBGES/boost_python"
+
 		// Curl (for WebRequest)
 		$Lib "$LIBCOMMON/libcrypto" [$POSIX]
 
-		$ImpLib	"$LIBCOMMON\curl"	  [$OSXALL]
+		$ImpLib	"$LIBCOMMON\curl" [$OSXALL]
 
-		$Lib	"$LIBCOMMON\libcurl" [$WIN32]
-		$Lib   "libz" [$WIN32]
+		$Lib "$LIBCOMMON\libcurl" [$WIN32]
+		$Lib "libz" [$WIN32]
 
 		$Libexternal "libz" [$LINUXALL]
 		$Libexternal "$LIBCOMMON/libcurl" [$LINUXALL]

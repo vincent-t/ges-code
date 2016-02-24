@@ -22,7 +22,7 @@
 
 #ifdef _DEBUG
 # ifndef BOOST_DEBUG_PYTHON
-#  ifdef _MSC_VER  
+#  ifdef _MSC_VER
     // VC8.0 will complain if system headers are #included both with
     // and without _DEBUG defined, so we have to #include all the
     // system headers used by pyconfig.h right here.
@@ -47,7 +47,8 @@
 # endif
 #endif
 
-# include <pyconfig.h>
+//# include <pyconfig.h>
+# include "../../python3/ges_build/pyconfig.h"
 # if defined(_SGI_COMPILER_VERSION) && _SGI_COMPILER_VERSION >= 740
 #  undef _POSIX_C_SOURCE
 #  undef _XOPEN_SOURCE

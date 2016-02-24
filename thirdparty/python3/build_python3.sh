@@ -31,7 +31,8 @@ echo "Deploying Python to build directories..."
 sleep 1
 
 # Link to the built pyconfig.h
-ln -vfs ../ges_build/bin/include/python3.4m/pyconfig.h ../Include/pyconfig.h
+#ln -vfs ../ges_build/bin/include/python3.4m/pyconfig.h ../Include/pyconfig.h
+ln -vfs ../ges_build/pyconfig.h ../Include/pyconfig.h
 
 # Copy the shared library (eventually deploys to $GES_PATH/bin)
 cp -v ./bin/lib/libpython3.4m.so.1.0 ../../../bin/mod_ges/
